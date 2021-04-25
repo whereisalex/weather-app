@@ -1,5 +1,7 @@
 # Weather App
 
+A simple weather App that uses the [SRG-SSR](https://developer.srgssr.ch/apis/srgssr-weather)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
