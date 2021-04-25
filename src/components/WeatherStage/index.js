@@ -1,24 +1,29 @@
 import React, {useEffect, useState} from 'react';
-import {fetchAccessToken, fetchWeather} from '../../utils/weather';
+import { WEATHER_API_7_DAYS, WEATHER_API_CURRENT, fetchAccessToken, fetchWeather }  from '../../utils/weather';
+
+import WeatherIcon from './../WeatherIcon';
+import {getWeekDay} from '../../utils/date';
+import styles from './styles.css';
 
 const WeatherStage = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState({});
+    const [currentWeather, setCurrentWeather] = useState({});
+    const [weekWeather, setWeekWeather] = useState([]);
 
     useEffect(() => {
-        async function fetchWeatherData() { 
-            try {
-                const accessToken = await fetchAccessToken();
-                const weatherCurrent = await fetchWeather('current',accessToken, 47.36667, 8.5 );
-                const weather7Days = await fetchWeather('7day',accessToken, 47.36667, 8.5 );
-                setIsLoaded(true);
-                setItems(weatherCurrent)
-                console.log('weather', weatherCurrent,weather7Days);
+      async function fetchWeatherData() { 
+        try {
+          const accessToken = await fetchAccessToken();
+          const weatherCurrent = await fetchWeather(WEATHER_API_CURRENT, accessToken, 47.36667, 8.5 );
+          const weather7Days = await fetchWeather(WEATHER_API_7_DAYS, accessToken, 47.36667, 8.5 );
+          setIsLoaded(true);
+          setCurrentWeather(weatherCurrent)
+          setWeekWeather((weather7Days['7days'] && weather7Days['7days'].splice(1,7)) || [])
         } catch (error) {
             setIsLoaded(true);
             setError(error);
-            }
+          }
         }
         fetchWeatherData()
       }, [])
@@ -29,12 +34,24 @@ const WeatherStage = () => {
       return <div>Loading...</div>;
     } else {
       return (
-        <ul>
-          <li>{items?.info?.name?.de}</li>
-          <li>{items?.formatted_date}</li>  
-          <li>Min: {items?.current_day?.values[0]?.ttn}°</li>  
-          <li>Max: {items?.current_day?.values[2]?.ttx}°</li>  
+          <div>
+              <div>
+              <div>{currentWeather?.info?.name?.de}</div>
+          <div>{currentWeather?.formatted_date}</div>  
+          <div>Min: {currentWeather?.current_day?.values[0]?.ttn}°</div>  
+          <div>Max: {currentWeather?.current_day?.values[2]?.ttx}°</div>  
+              </div>
+        <ul className={'current-week'}>
+         {weekWeather && weekWeather.map((day) => 
+             (<div key={day.date}>
+                 {getWeekDay(day.date)}
+                 <WeatherIcon id={day?.values[1]?.smbd}/>
+                 <div>Min: {day?.values[0]?.ttn}°</div>  
+                 <div>Max: {day?.values[2]?.ttx}°</div>  
+             </div>)
+         )}
         </ul>
+        </div>
       );
     }
   }

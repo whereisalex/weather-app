@@ -1,6 +1,6 @@
 # Weather App
 
-A simple weather App that uses the [SRG-SSR](https://developer.srgssr.ch/apis/srgssr-weather)
+A simple weather App that uses the [SRG SSR Weather API](https://developer.srgssr.ch/apis/srgssr-weather) to fetch Weather data.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
