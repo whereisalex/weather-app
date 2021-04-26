@@ -6,7 +6,9 @@ import WeatherStage from './components/WeatherStage';
 function App() {  
   return (
     <div className="App">
-      <WeatherStage />
+      <div className="WeatherStageWrapper">
+        <WeatherStage />
+      </div>
     </div>
   );
 }

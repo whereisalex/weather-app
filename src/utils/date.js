@@ -3,19 +3,19 @@ export const getWeekDay = (date) => {
    
     switch(weekDay){
         case 1:
-            return 'Mo';
+            return 'Monday';
         case 2:
-            return 'Di';
+            return 'Tuesday';
         case 3:
-            return 'Mi';
+            return 'Wednesday';
         case 4:
-            return 'Do';
+            return 'Thursday';
         case 5:
-            return 'Fr';
+            return 'Friday';
         case 6:
-            return 'Sa';
-        case 7:
-            return 'So';
+            return 'Saturday';
+        case 0:
+            return 'Sunday';
         default:
             return '';
     }
