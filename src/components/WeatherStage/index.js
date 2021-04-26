@@ -39,10 +39,21 @@ const WeatherStage = () => {
      }
 
     return (
-      <div>
+      <div className="WeatherStage">
         <div className="CurrentDay">
           <WeatherCurrentDay date={currentWeather?.formatted_date} current_day={currentWeather.current_day} city={currentWeather?.info?.name?.de} />
         </div>
+        {/*<ul className='CurrentHours'>
+          {dayWeather && dayWeather.map((day) => 
+            <div key={day.date}>
+            <span>{new Date(day.date).getHours()+' Uhr'}</span>
+            <div className="WeatherIcon">
+                <WeatherIcon id={day?.values[0]?.smb3}/>
+            </div>
+            <div>{day?.values[1]?.ttt}°</div>  
+        </div>
+          )} 
+        </ul> */}
         <ul className='CurrentWeek'>
           {weekWeather && weekWeather.map((day) => 
              <WeatherWeekDay key={day.date} day={day} />

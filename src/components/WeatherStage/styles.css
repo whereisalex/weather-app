@@ -1,3 +1,9 @@
+.WeatherStage {
+  background-color: #222222;
+  color: white;
+  padding: 8px;
+}
+
 .CurrentWeek {
   display: flex;
   position: relative;
@@ -13,6 +19,11 @@
 }
 
 @media (min-width: 992px) {
+  .WeatherStage {
+    border-radius: 8px;
+    padding: 24px;
+  }
+
   .CurrentWeek {
     flex-direction: row;
   }
