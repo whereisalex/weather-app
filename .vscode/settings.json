@@ -1,5 +1,6 @@
 {
     "css.validate": false, // Disable css built-in lint
     "stylelint.enable": true, // Enable sytlelint
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "sort-imports.on-save": false
 }
