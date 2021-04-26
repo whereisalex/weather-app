@@ -1,5 +1,23 @@
-.current-week {
+.CurrentWeek {
   display: flex;
   position: relative;
   justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.CurrentDay {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 992px) {
+  .CurrentWeek {
+    flex-direction: row;
+  }
+
+  .CurrentDay {
+    flex-direction: row;
+  }
 }
