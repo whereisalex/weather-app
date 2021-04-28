@@ -1,0 +1,79 @@
+/*.WeatherCurrentDay {
+  display: flex;
+  justify-content: center;
+}*/
+
+.CurrentCity {
+  font-family: "Quicksand-Bold";
+  font-size: 1rem;
+}
+
+.CurrentDate {
+  margin-bottom: 8px;
+}
+
+.WeatherIconWrapper {
+  height: 180px;
+  width: 180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.CurrentTemp {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.MinMaxTemp {
+  opacity: 0.7;
+}
+
+.Today {
+  text-transform: uppercase;
+  font-family: "Quicksand-Bold";
+  display: none;
+}
+
+@media (min-width: 850px) {
+  .CurrentCity {
+    font-family: "Quicksand-Bold";
+    font-size: 4rem;
+    line-height: 4rem;
+    margin-bottom: 8px;
+  }
+
+  .CurrentDate {
+    text-align: left;
+  }
+
+  .WeatherCurrentDayContentWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .WeatherIconWrapper {
+    height: 200px;
+    width: 200px;
+  }
+
+  .CurrentTemp {
+    font-size: 8rem;
+    line-height: 8rem;
+    margin-bottom: 8px;
+  }
+
+  .MinMaxTemp {
+    font-size: 2rem;
+    text-align: right;
+    margin-right: 16px;
+  }
+
+  .TemperaturWrapper {
+  }
+
+  .Today {
+    display: inline;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}

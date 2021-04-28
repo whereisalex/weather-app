@@ -13,6 +13,7 @@
 }
 
 .WeekdayName {
+  font-family: "Quicksand-Bold";
   min-width: 90px;
   text-align: left;
 }
@@ -21,7 +22,7 @@
   font-weight: bold;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 850px) {
   .WeekdayWrapper {
     flex-direction: column;
   }
@@ -29,5 +30,11 @@
   .WeatherIcon {
     width: 100px;
     height: 100px;
+    margin-bottom: 8px;
+  }
+
+  .WeekdayName {
+    margin-bottom: 8px;
+    text-align: center;
   }
 }

@@ -1,15 +1,15 @@
-import weatherSun from './../../assets/icons/1.png';
-import weatherSunCloud from './../../assets/icons/3.png';
-import weatherSunCloudRain from './../../assets/icons/4.png';
-import weatherFog from './../../assets/icons/17.png';
-import weatherCloud from './../../assets/icons/18.png';
-import weatherCloudRain from './../../assets/icons/20.png';
-import weatherCloudSnow from './../../assets/icons/21.png';
-import weatherCloudRainSnow from './../../assets/icons/22.png';
-import weatherThunder from './../../assets/icons/26.png';
-import weatherMoon from './../../assets/icons/-1.png';
-import weatherMoonCloud from './../../assets/icons/-3.png';
-import weatherMoonCloudRain from './../../assets/icons/-4.png';
+import weatherSun from './../../assets/icons/dark/1.png';
+import weatherSunCloud from './../../assets/icons/dark/3.png';
+import weatherSunCloudRain from './../../assets/icons/dark/4.png';
+import weatherFog from './../../assets/icons/dark/17.png';
+import weatherCloud from './../../assets/icons/dark/18.png';
+import weatherCloudRain from './../../assets/icons/dark/20.png';
+import weatherCloudSnow from './../../assets/icons/dark/21.png';
+import weatherCloudRainSnow from './../../assets/icons/dark/22.png';
+import weatherThunder from './../../assets/icons/dark/26.png';
+import weatherMoon from './../../assets/icons/dark/-1.png';
+import weatherMoonCloud from './../../assets/icons/dark/-3.png';
+import weatherMoonCloudRain from './../../assets/icons/dark/-4.png';
 
 const mapImageToId = (id) => {
     switch(id){

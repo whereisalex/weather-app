@@ -1,5 +1,5 @@
 .WeatherStage {
-  background-color: #222222;
+  background-color: #1b2b38;
   color: white;
   padding: 8px;
 }
@@ -13,12 +13,12 @@
 }
 
 .CurrentDay {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 850px) {
   .WeatherStage {
     border-radius: 8px;
     padding: 24px;
@@ -29,6 +29,6 @@
   }
 
   .CurrentDay {
-    flex-direction: row;
+    margin-bottom: 32px;
   }
 }

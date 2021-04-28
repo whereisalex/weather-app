@@ -41,7 +41,7 @@ const WeatherStage = () => {
     return (
       <div className="WeatherStage">
         <div className="CurrentDay">
-          <WeatherCurrentDay date={currentWeather?.formatted_date} current_day={currentWeather.current_day} city={currentWeather?.info?.name?.de} />
+          <WeatherCurrentDay date={currentWeather?.formatted_date} currentDay={currentWeather.current_day} currentHour={currentWeather.current_hour} city={currentWeather?.info?.name?.de} />
         </div>
         {/*<ul className='CurrentHours'>
           {dayWeather && dayWeather.map((day) => 

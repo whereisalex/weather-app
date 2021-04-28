@@ -3,18 +3,24 @@ import React from 'react';
 import WeatherIcon from './../WeatherIcon';
 import './styles.css';
 
-const WeatherCurrentDay = ({current_day, city, date}) => {
+const WeatherCurrentDay = ({currentDay, currentHour, city, date}) => {
     return (
-        <div>
-            <div>
-                <div>{city}</div>
-                <div>{date}</div>  
-                <div>Min: {current_day?.values[0]?.ttn}°</div>  
-                <div>Max: {current_day?.values[2]?.ttx}°</div> 
+        <div className="WeatherCurrentDay">
+            <div className="WeatherCurrentDayContentWrapper">
+                <div className="InfoWrapper">
+                    <div className="CurrentCity">{city}</div>
+                    <div className="CurrentDate"><span className="Today">today</span>{date}</div>  
+                    <div className="WeatherIconWrapper">
+                    <WeatherIcon id={currentDay?.values[1]?.smbd}/>
+                    </div> 
+                </div>
+                <div class="TemperaturWrapper">
+                    <div className="CurrentTemp">
+                        {currentHour?.[0]?.values?.[1]?.ttt}°
+                    </div>
+                    <div className="MinMaxTemp">{`${currentDay?.values[0]?.ttn}°  |  ${currentDay?.values[2]?.ttx}°`}</div>  
+                </div>
             </div>
-            <div>
-            <WeatherIcon id={current_day?.values[1]?.smbd}/>
-            </div> 
         </div>    
     );
   }
