@@ -2,9 +2,13 @@
   text-align: center;
 }
 
+.WeatherStageWrapper {
+  margin: 8px;
+}
+
 @media (min-width: 850px) {
   .WeatherStageWrapper {
     max-width: 850px;
-    margin: 24px auto;
+    margin: 8px auto 24px;
   }
 }

@@ -1,11 +1,6 @@
-/*.WeatherCurrentDay {
-  display: flex;
-  justify-content: center;
-}*/
-
 .CurrentCity {
   font-family: "Quicksand-Bold";
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 .CurrentDate {
@@ -66,9 +61,6 @@
     font-size: 2rem;
     text-align: right;
     margin-right: 16px;
-  }
-
-  .TemperaturWrapper {
   }
 
   .Today {
