@@ -24,9 +24,6 @@
   right: 2px;
   width: 28px;
   height: 28px;
-  position: absolute;
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
   content: url(./../../assets/icons/light/1.png);
 }
 
@@ -35,9 +32,6 @@
   left: -2px;
   width: 35px;
   height: 35px;
-  position: absolute;
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
   content: url(./../../assets/icons/dark/-1.png);
 }
 
@@ -51,15 +45,10 @@
 
 .Slider {
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
   position: absolute;
-  right: 0;
-  top: 0;
   background-color: var(--white);
   width: 26px;
   height: 26px;
-  position: absolute;
   right: 30px;
   top: 4px;
   transition: transform 0.3s ease-in-out;
@@ -73,10 +62,6 @@
 
 .DarkMode .Toggle {
   background-color: var(--black-a);
-}
-
-.DarkMode .Sun {
-  opacity: 0;
 }
 
 @media (min-width: 850px) {
