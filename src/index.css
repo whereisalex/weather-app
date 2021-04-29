@@ -12,6 +12,15 @@
   src: url(./assets/fonts/Quicksand/Quicksand-Bold.ttf);
 }
 
+:root {
+  --black-a: #1b2b38;
+  --black-b: #0d1b24;
+  --black-c: #3a3a3a;
+
+  --beige: #f7ecdb;
+  --white: #ffffff;
+}
+
 body {
   margin: 0;
   font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -19,7 +28,10 @@ body {
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #0d1b24;
+  transition: background 0.3s ease-in-out;
+  background: var(--beige);
 }
 
-/* FAFAF4 */
+body.DarkMode {
+  background: var(--black-b);
+}

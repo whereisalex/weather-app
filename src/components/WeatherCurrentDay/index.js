@@ -14,7 +14,7 @@ const WeatherCurrentDay = ({currentDay, currentHour, city, date}) => {
                     <WeatherIcon id={currentDay?.values[1]?.smbd}/>
                     </div> 
                 </div>
-                <div class="TemperaturWrapper">
+                <div className="TemperaturWrapper">
                     <div className="CurrentTemp">
                         {currentHour?.[0]?.values?.[1]?.ttt}°
                     </div>

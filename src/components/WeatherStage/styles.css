@@ -1,7 +1,13 @@
 .WeatherStage {
-  background-color: #1b2b38;
-  color: white;
+  background-color: var(--white);
+  color: var(--black-c);
   padding: 8px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.DarkMode .WeatherStage {
+  background-color: var(--black-a);
+  color: var(--white);
 }
 
 .CurrentWeek {
