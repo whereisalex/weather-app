@@ -4,7 +4,6 @@ import './styles.css';
 
 
 const DarkModeToggle = () => {     
-
   return (
     <ThemeContext.Consumer>
         {({theme, setTheme}) => (

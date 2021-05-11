@@ -13,7 +13,6 @@ const CLASSNAMES = {[THEME_LIGHT]: 'LightMode', [THEME_DARK]: 'DarkMode'};
 
   useEffect(() => {
     const darkOS = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    console.log('dark OS', darkOS);
     setTheme(darkOS ? THEME_DARK: THEME_LIGHT);
   }, []);
 
