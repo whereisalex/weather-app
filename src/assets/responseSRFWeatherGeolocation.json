@@ -1,0 +1,29 @@
+[
+    {
+        "district": "",
+        "id": "8178a4c7a4c8522e463ef35b3017ea2b",
+        "geolocation": {
+            "id": "47.3728,8.5155",
+            "lat": 47.3728,
+            "lon": 8.5155,
+            "station_id": "S12885",
+            "timezone": "Europe/Zurich",
+            "default_name": "Zürich",
+            "alarm_region_id": "11",
+            "alarm_region_name": "Stadt ZH",
+            "district": "",
+            "geolocation_names": []
+        },
+        "location_id": "4180008003",
+        "type": "city",
+        "language": 0,
+        "translation_type": "orig",
+        "name": "Zürich",
+        "country": "Schweiz",
+        "province": "Zürich",
+        "inhabitants": 0,
+        "height": 453,
+        "plz": 8003,
+        "ch": 1
+    }
+]

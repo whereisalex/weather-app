@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { WEATHER_API_7_DAYS, WEATHER_API_CURRENT, fetchAccessToken, fetchWeather }  from '../../utils/weather';
+import { fetchGeolocationByZipCode, fetchAccessToken, forecastByGelocationId }  from '../../utils/weather';
 import WeatherCurrentDay from './../WeatherCurrentDay';
 import WeatherWeekDay from './../WeatherWeekDay';
 import './styles.css';
@@ -7,47 +7,62 @@ import './styles.css';
 const WeatherStage = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [currentWeather, setCurrentWeather] = useState({});
-    const [weekWeather, setWeekWeather] = useState([]);
+    const [weather, setWeather] = useState(null);
+    const [geolocation, setGeolocation] = useState(null);
 
     useEffect(() => {
       async function fetchWeatherData() { 
         try {
+          let weatherCurrent = null;
           const accessToken = await fetchAccessToken();
-          const weatherCurrent = await fetchWeather(WEATHER_API_CURRENT, accessToken, 47.36667, 8.5 );
-          const weather7Days = await fetchWeather(WEATHER_API_7_DAYS, accessToken, 47.36667, 8.5 );
-          setIsLoaded(true);
+          const geolocation = await fetchGeolocationByZipCode(accessToken, 8003);
+
+          if(geolocation.error){
+            setIsLoaded(true);
+            setError(geolocation.error);
+          } 
+
+          if (geolocation.length){
+            weatherCurrent = await forecastByGelocationId(accessToken, geolocation[0].geolocation.id);
+          }
+
           if (weatherCurrent){
-            setCurrentWeather(weatherCurrent);
-            setWeekWeather((weather7Days['7days'] && weather7Days['7days'].splice(1,7)) || []);
-          } else {
-            setError({message: 'Try again later.'});
+            setIsLoaded(true);
+            if (weatherCurrent.error){
+              setError(weatherCurrent.error);
+            } else {
+              setWeather(weatherCurrent?.forecast);
+              setGeolocation(weatherCurrent?.geolocation);
+            }
           }
         } catch (error) {
             setIsLoaded(true);
             setError(error);
-          }
+          } 
         }
         fetchWeatherData()
       }, [])
   
-    if (error) {
-      return <div>Error: {error.message}</div>;
+    if (error || !weather) {
+      return <div>Error: {error?.message}</div>;
     }
-     if (!isLoaded) {
+
+    if (!isLoaded) {
       return <div>Loading...</div>;
-     }
+    }
+    
+    let week =  weather?.day?.slice(1,7) || [];
 
     return (
       <div className="WeatherStage">
         <div className="CurrentDay">
-          <WeatherCurrentDay date={currentWeather?.formatted_date} currentDay={currentWeather.current_day} currentHour={currentWeather.current_hour} city={currentWeather?.info?.name?.de} />
+          <WeatherCurrentDay date={weather['60minutes'][0].local_date_time} currentDay={weather.day[0]} currentHour={weather['60minutes'][0]} city={geolocation?.default_name} />
         </div>
         <ul className='CurrentWeek'>
-          {weekWeather && weekWeather.map((day) => 
-             <WeatherWeekDay key={day.date} day={day} />
+          {week.map((day) => 
+             <WeatherWeekDay key={day.local_date_time} day={day} />
           )}
-        </ul>
+          </ul>
       </div>
     );
   }

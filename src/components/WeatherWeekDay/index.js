@@ -4,14 +4,18 @@ import { getWeekDay } from '../../utils/date';
 import './styles.css';
 
 const WeatherWeekDay = ({day}) => {
+    if(!day || !day['TX_C'] || !day['TN_C'] || !day['SYMBOL_CODE']){
+        return null;
+    }
+
     return (
-        <div className="WeekdayWrapper" key={day.date}>
-            <span className="WeekdayName">{getWeekDay(day.date)}</span>
+        <div className="WeekdayWrapper" key={day.local_date_time}>
+            <span className="WeekdayName">{getWeekDay(day.local_date_time)}</span>
             <div className="WeatherIcon">
-                <WeatherIcon id={day?.values[1]?.smbd}/>
+                <WeatherIcon id={day['SYMBOL_CODE']}/>
             </div>
-            <div className="WeekdayMax">{day?.values[2]?.ttx}°</div>  
-            <div>{day?.values[0]?.ttn}°</div>  
+            <div className="WeekdayMax">{day['TX_C']}°</div>  
+            <div>{day['TN_C']}°</div>  
         </div>
     );
   }

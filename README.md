@@ -1,11 +1,21 @@
 # Weather App
 
-A simple weather App that uses the [SRG SSR Weather API](https://developer.srgssr.ch/apis/srgssr-weather) to fetch Weather data.
+A simple weather App that uses the [SRF Weather API](https://developer.srgssr.ch/apis/srf-weather) to fetch Weather data.
 
 <img src="./src/assets/Screenshot.png" alt="screenshot" width="500"/>
 
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Setup
+
+Create an .env file in the root directory with the following entries:
+
+```javascript
+REACT_APP_WEATHER_CONSUMER_KEY=CONSUMER KEY
+REACT_APP_WEATHER_CONSUMER_SECRET=CONSUMER SECRET
+```
+
+(Note: the SRF-MeteoProductFreemium product only allows 6 free requests/day).
 
 ## Available Scripts
 
@@ -33,4 +43,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
